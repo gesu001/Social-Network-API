@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const thoughtSchema = require('./Thought')
 
 // Schema to create user model
 const userSchema = new Schema(
@@ -20,12 +21,7 @@ const userSchema = new Schema(
                 message: props => `${props.value} is not a valid email!`
             },     
         },
-        thoughts: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'thought'
-            },
-        ],
+        thoughts: [thoughtSchema],
         friends: [
             {
                 type: Schema.Types.ObjectId,
