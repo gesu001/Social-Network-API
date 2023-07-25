@@ -21,7 +21,12 @@ const userSchema = new Schema(
                 message: props => `${props.value} is not a valid email!`
             },     
         },
-        thoughts: [thoughtSchema],
+        thoughts: [            
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'thought'
+            },
+        ],
         friends: [
             {
                 type: Schema.Types.ObjectId,
@@ -31,6 +36,7 @@ const userSchema = new Schema(
     },
     {
         toJSON: {
+            getters: true,
             virtuals: true,
         },
         id: false,
@@ -41,7 +47,7 @@ const userSchema = new Schema(
 userSchema
     .virtual('friendCount')
     .get(function (v) {
-        return this.friends.lenghth;
+        return this.friends.length;
     });
 
 const User = model('user', userSchema);

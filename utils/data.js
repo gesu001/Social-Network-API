@@ -95,7 +95,7 @@ const names = [
       results.push({
         thoughtText: getRandomArrItem(descriptionsBodies),
         username: getRandomName(),
-        reactions: [...getThoughtReactions(3)],
+        reactions: [...getThoughtReactions(1)],
       });
     }
     return results;
@@ -109,7 +109,7 @@ const names = [
     let results = [];
     for (let i = 0; i < int; i++) {
       results.push({
-        responseBody: getRandomArrItem(possibleReactions),
+        reactionBody: getRandomArrItem(possibleReactions),
         username: getRandomName(),
       });
     }

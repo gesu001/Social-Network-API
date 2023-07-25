@@ -18,18 +18,17 @@ connection.once('open', async () => {
   }
 
   const users = [];
-  const thoughts = getRandomThoughts(5);
+  const thoughts = getRandomThoughts(3);
 
-  for (let i = 0; i < 20; i++) {
-    const fullName = getRandomName();
-    const first = fullName.split(' ')[0];
-    const last = fullName.split(' ')[1];
+  for (let i = 0; i < 3; i++) {
+    const username = getRandomName();
+    const first = username.split(' ')[0];
+    const last = username.split(' ')[1];
     const email = `${first}.${last}${Math.floor(Math.random() * (99 - 18 + 1) + 18)}@gmail.com`;
 
     users.push({
-      fullName,
+      username,
       email,
-      thoughts
     });
   }
 
