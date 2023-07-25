@@ -95,7 +95,7 @@ const names = [
       results.push({
         thoughtText: getRandomArrItem(descriptionsBodies),
         username: getRandomName(),
-        reactions: [...getThoughtReactions(1)],
+        reactions: [...getThoughtReactions(2)],
       });
     }
     return results;
